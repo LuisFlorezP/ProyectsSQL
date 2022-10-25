@@ -130,3 +130,34 @@ insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador
 ('Calle 10 # 04','2021/04/27','07:55',3,630000,119700,749700,19,5,2,10), ('Calle 85 # 36','2017/06/29','08:15',1,660000,125400,785400,5,5,16,11),
 ('Calle 21 # 03','2018/01/02','18:40',7,5810000,1103900,6913900,10,3,11,1), ('Calle 25 # 54','2021/12/11','08:10',5,1110000,210900,1320900,15,1,6,18),
 ('Calle 10 # 05','2022/03/26','11:55',6,6300000,1197000,7497000,20,6,1,8), ('Calle 04 # 81','2017/04/23','09:45',5,7250000,1377500,8627500,8,1,13,2);
+
+
+use Taller1;
+select sum(precio_articulo) 'SUMA PRECIOS ARTÍCULOS' from articulo;
+
+use Taller1;
+select count(envio_id) 'ENVÍOS URGENTES' from factura where envio_id=1;
+
+use Taller1;
+select sum(neto) 'ENVÍOS PESADOS' from factura where envio_id=7;
+
+use Taller1;
+select max(precio_articulo) 'MAYOR PRECIO' from articulo;
+
+use Taller1;
+select min(precio_articulo) 'MENOR PRECIO' from articulo;
+
+use Taller1;
+select avg(neto) 'PROMEDIO DEL VALOR NETO' from factura;
+
+use Taller1;
+select avg(bruto) 'PROMEDIO DEL VALOR BRUTO' from factura;
+
+use Taller1;
+select count(nombre_comprador) 'CANTIDAD DE FERNANDOS' from comprador where nombre_comprador='Fernando';
+
+use Taller1;
+select count(nombre_vendedor) 'CANTIDAD DE ANDREAS' from vendedor where nombre_vendedor='Andrea';
+
+use Taller1
+select salario from vendedor where salario between '1000000' and '1400000';
