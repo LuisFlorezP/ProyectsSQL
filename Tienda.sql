@@ -94,7 +94,8 @@ insert into comprador(nombre_comprador,apellido_comprador,direccion_comprador,te
 ('Andres','Martínez','Calle 54 # 14',5048795), ('Fernando','Montoya','Calle 36 # 40',5041346), ('Reinaldo','Palacio','Calle 27 # 20',5046456),
 ('Sofia','Fernandez','Calle 21 # 90',5043918), ('Estefani','Echeverri','Calle 11 # 6',5048271), ('Manuela','Bedoya','Calle 19 # 8',5049898),
 ('Sergio','Martínez','Calle 4 # 74',5040502), ('Luis','Montoya','Calle 30 # 1',5043080), ('Rene','Palacio','Calle 81 # 28',5046907),
-('Laura','Fernandez','Calle 22 # 9',5043060), ('Simón','Echeverri','Calle 69 # 7',5043014), ('Raul','Bedoya','Calle 16 # 7',5040287);
+('Laura','Fernandez','Calle 22 # 9',5043060), ('Simón','Echeverri','Calle 69 # 7',5043014), ('Raul','Bedoya','Calle 16 # 7',5040287),
+('Luis','Florez','Calle 11 # 7',5216500);
 
 use Tienda;
 insert into vendedor(nombre_vendedor,apellido_vendedor,direccion_vendedor,salario) values ('Andrea','Rodríguez','Calle 97 # 79',1000000),
@@ -104,7 +105,7 @@ insert into vendedor(nombre_vendedor,apellido_vendedor,direccion_vendedor,salari
 ('Martín','Muñoz','Calle 9 # 01',1000000), ('Pablo','Ortega','Calle 66 # 6',1000000), ('Isabel','Gallego','Calle 33 # 3',1000000),
 ('Sergio','Moreno','Calle 85 # 36',2000000), ('Luis','Torres','Calle 7 # 2',2000000), ('Rene','Medina','Calle 10 # 4',2200000),
 ('Lucas','Muñoz','Calle 12 # 21',2200000), ('Paula','Ortega','Calle 41 # 14',2400000), ('Carmen','Gallego','Calle 10 # 5',2400000),
-('Raul','Rodríguez','Calle 29 # 1',2500000);
+('Maria','Palacio','Calle 1 # 2',3000000);
 
 use Tienda;
 insert into envio(tipo_envio) values ('Envíos urgentes'), ('Envíos estándar'), ('Envíos contra reembolso'), ('Envíos pesados'),
