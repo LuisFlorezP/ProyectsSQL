@@ -40,18 +40,13 @@ select vendedor_id,sum(precio_articulo) 'SUMATORIA DEL PRECIO DEL ARTÍCULO PARA
 use Tienda;
 select nombre_comprador,count(apellido_comprador) 'CANTIDAD DE APELLIDOS DE COMPRADORES PARA CADA NOMBRE' from comprador group by nombre_comprador order by nombre_comprador;
 
--- Agrupar 
+-- Agrupar los compradores para saber el máximo valor bruto que le corresponde a cada comprador de la tabla factura
 use Tienda;
-select
+select comprador_id,max(bruto) 'MÁXIMO VALOR BRUTO DE CADA COMPRADOR' from factura group by comprador_id order by comprador_id;
 
--- Agrupar 
+-- Agrupar los vendedores para saber el mínimo valor bruto que le corresponde a cada vendedor de la tabla factura 
 use Tienda;
-select
-
-/* 
-*/
-use Tienda;
-select
+select num_vendedor,min(bruto) 'MÍNIMO VALOR BRUTO DE CADA VENDEDOR' from factura group by num_vendedor order by num_vendedor;
 
 /* 
 */
@@ -83,7 +78,10 @@ select
 use Tienda;
 select
 
-/* 
-*/
-use Tienda;
-select
+-- Ordenar de forma ascendente los nombres de artículos, mostrando solamente aquellos nombres que empiecen con la letra "A" de la tabla artículo
+use Tienda;
+select * from articulo where nombre_articulo like 'A%' order by nombre_articulo;
+
+-- Ordenar de forma descendente los apellidos de los compradores, mostrando solamente aquellos aepllidos que terminen con la letra "i" de la tabla comprador
+use Tienda;
+select * from comprador where apellido_comprador like '%i' order by apellido_comprador DESC;
