@@ -124,23 +124,19 @@ insert into articulo(nombre_articulo,precio_articulo,vendedor_id) values
 ('Manzana',985300,12), ('Aguacate',15500,18), ('Pan',70000,19),('Salsa roja',450000,19);
 
 use Tienda;
-insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values ('Calle 26 # 26','2017/02/22','18:10',2,30000,5700,35700,1,1,20,13);
-insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values ('Calle 12 # 21','2018/09/18','14:00',1,280000,53200,333200,6,6,15,3);
-insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values ('Calle 66 # 06','2021/03/10','12:20',6,6000000,1140000,7140000,11,4,10,16);
-insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values ('Calle 45 # 45','2022/11/14','14:22',4,400000,76000,476000,16,2,5,6);
-insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values ('Calle 97 # 11','2018/01/01','15:50',4,120000,22800,142800,2,2,19,15);
-insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values ('Calle 01 # 02','2019/08/15','11:10',1,1250000,237500,1487500,7,7,14,5);
-insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values ('Calle 07 # 02','2020/03/21','10:10',9,2970000,564300,3534300,12,5,9,19);
-insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values ('Calle 36 # 63','2021/12/04','10:30',4,1760000,334400,2094400,17,3,4,9);
-insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values ('Calle 34 # 43','2019/01/11','12:05',3,135000,25650,160650,3,3,18,12);
-insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values ('Calle 41 # 14','2022/07/12','12:25',1,510000,96900,606900,13,6,8,17);
-insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values ('Calle 33 # 03','2020/01/19','11:20',2,310000,58900,368900,18,4,3,7);
-insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values ('Calle 09 # 01','2018/08/03','13:35',1,520000,98800,618800,4,4,17,14);
-insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values ('Calle 07 # 71','2019/08/16','16:45',4,3040000,577600,3617600,9,2,12,4);
-insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values ('Calle 97 # 79','2020/07/18','09:55',2,1980000,376200,2356200,14,7,7,20);
-insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values ('Calle 10 # 04','2021/04/27','07:55',3,630000,119700,749700,19,5,2,10);
-insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values ('Calle 85 # 36','2017/06/29','08:15',1,660000,125400,785400,5,5,16,11);
-insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values ('Calle 21 # 03','2018/01/02','18:40',7,5810000,1103900,6913900,10,3,11,1);
-insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values ('Calle 25 # 54','2021/12/11','08:10',5,1110000,210900,1320900,15,1,6,18);
-insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values ('Calle 10 # 05','2022/03/26','11:55',6,6300000,1197000,7497000,20,6,1,8);
-insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values ('Calle 04 # 81','2017/04/23','09:45',5,7250000,1377500,8627500,8,1,13,2);
+insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values 
+('Calle 26 # 26','2017/02/22','18:10',2,30000,5700,35700,1,1,20,13), ('Calle 12 # 21','2018/09/18','14:00',1,280000,53200,333200,6,6,15,3),
+('Calle 66 # 06','2021/03/10','12:20',6,6000000,1140000,7140000,11,4,10,16), ('Calle 45 # 45','2022/11/14','14:22',4,400000,76000,476000,16,2,5,6),
+('Calle 97 # 11','2018/01/01','15:50',4,120000,22800,142800,2,2,19,15), ('Calle 01 # 02','2019/08/15','11:10',1,1250000,237500,1487500,7,7,14,5),
+('Calle 07 # 02','2020/03/21','10:10',9,2970000,564300,3534300,12,5,9,19), ('Calle 36 # 63','2021/12/04','10:30',4,1760000,334400,2094400,17,3,4,9),
+('Calle 34 # 43','2019/01/11','12:05',3,135000,25650,160650,3,3,18,12), ('Calle 41 # 14','2022/07/12','12:25',1,510000,96900,606900,13,6,8,17),
+('Calle 33 # 03','2020/01/19','11:20',2,310000,58900,368900,18,4,3,7), ('Calle 09 # 01','2018/08/03','13:35',1,520000,98800,618800,4,4,17,14),
+('Calle 07 # 71','2019/08/16','16:45',4,3040000,577600,3617600,9,2,12,4), ('Calle 97 # 79','2020/07/18','09:55',2,1980000,376200,2356200,14,7,7,20),
+('Calle 10 # 04','2021/04/27','07:55',3,630000,119700,749700,19,5,2,10), ('Calle 85 # 36','2017/06/29','08:15',1,660000,125400,785400,5,5,16,11),
+('Calle 21 # 03','2018/01/02','18:40',7,5810000,1103900,6913900,10,3,11,1), ('Calle 25 # 54','2021/12/11','08:10',5,1110000,210900,1320900,15,1,6,18),
+('Calle 10 # 05','2022/03/26','11:55',6,6300000,1197000,7497000,20,6,1,8), ('Calle 04 # 81','2017/04/23','09:45',5,7250000,1377500,8627500,8,1,13,2);
+
+use Tienda;
+insert into factura(cantidad,bruto,comprador_id,num_vendedor) values 
+(1,45000,12,4), (4,2640000,13,3), (4,2640000,15,4), (2,440000,12,5), (3,90000,2,4),
+(4,2640000,15,3), (1,45000,9,8), (2,440000,15,3), (1,45000,13,4), (3,90000,9,11);

@@ -146,6 +146,11 @@ insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador
 ('Calle 21 # 03','2018/01/02','18:40',7,5810000,1103900,6913900,10,3,11,1), ('Calle 25 # 54','2021/12/11','08:10',5,1110000,210900,1320900,15,1,6,18),
 ('Calle 10 # 05','2022/03/26','11:55',6,6300000,1197000,7497000,20,6,1,8), ('Calle 04 # 81','2017/04/23','09:45',5,7250000,1377500,8627500,8,1,13,2);
 
+use Tienda;
+insert into factura(cantidad,bruto,comprador_id,num_vendedor) values 
+(1,45000,12,4), (4,2640000,13,3), (4,2640000,15,4), (2,440000,12,5), (3,90000,2,4),
+(4,2640000,15,3), (1,45000,9,8), (2,440000,15,3), (1,45000,13,4), (3,90000,9,11);
+
 
 use Tienda;
 select sum(precio_articulo) 'SUMA PRECIOS ARTÍCULOS' from articulo;
