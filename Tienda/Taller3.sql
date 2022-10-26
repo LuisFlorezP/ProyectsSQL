@@ -36,9 +36,9 @@ select salario,count(nombre_vendedor) 'CANTIDAD DE SALARIOS REPETIDOS' from vend
 use Tienda;
 select vendedor_id,sum(precio_articulo) 'SUMATORIA DEL PRECIO DEL ARTÍCULO PARA CADA VENDEDOR' from articulo group by vendedor_id order by vendedor_id;
 
--- Agrupar 
+-- Agrupar los nombres de compradores para contar la cantidad de apellidos que le corresponde a cada comprador de la tabla comprador
 use Tienda;
-select
+select nombre_comprador,count(apellido_comprador) 'CANTIDAD DE APELLIDOS DE COMPRADORES PARA CADA NOMBRE' from comprador group by nombre_comprador order by nombre_comprador;
 
 -- Agrupar 
 use Tienda;
