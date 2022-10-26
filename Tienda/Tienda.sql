@@ -132,32 +132,32 @@ insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador
 ('Calle 10 # 05','2022/03/26','11:55',6,6300000,1197000,7497000,20,6,1,8), ('Calle 04 # 81','2017/04/23','09:45',5,7250000,1377500,8627500,8,1,13,2);
 
 
-use Taller1;
+use Tienda;
 select sum(precio_articulo) 'SUMA PRECIOS ARTÍCULOS' from articulo;
 
-use Taller1;
+use Tienda;
 select count(envio_id) 'ENVÍOS URGENTES' from factura where envio_id=1;
 
-use Taller1;
+use Tienda;
 select sum(neto) 'ENVÍOS PESADOS' from factura where envio_id=7;
 
-use Taller1;
+use Tienda;
 select max(precio_articulo) 'MAYOR PRECIO' from articulo;
 
-use Taller1;
+use Tienda;
 select min(precio_articulo) 'MENOR PRECIO' from articulo;
 
-use Taller1;
+use Tienda;
 select avg(neto) 'PROMEDIO DEL VALOR NETO' from factura;
 
-use Taller1;
+use Tienda;
 select avg(bruto) 'PROMEDIO DEL VALOR BRUTO' from factura;
 
-use Taller1;
+use Tienda;
 select count(nombre_comprador) 'CANTIDAD DE FERNANDOS' from comprador where nombre_comprador='Fernando';
 
-use Taller1;
+use Tienda;
 select count(nombre_vendedor) 'CANTIDAD DE ANDREAS' from vendedor where nombre_vendedor='Andrea';
 
-use Taller1
+use Tienda
 select salario from vendedor where salario between '1000000' and '1400000';
