@@ -97,6 +97,13 @@ insert into comprador(nombre_comprador,apellido_comprador,direccion_comprador,te
 ('Luis','Florez','Calle 11 # 7',5216500), ('Riguberto','Herrera','Calle 2 # 91',5047142);
 
 use Tienda;
+insert into comprador(nombre_comprador,apellido_comprador) values 
+('Andres','Martínez'), ('Jorge','Martínez'), ('Sofia','Martínez'), ('Tatiana','Martínez'), ('Pedro','Martínez'), 
+('Jorge','Martínez'), ('Jorge','Martínez'), ('Jorge','Martínez'), ('Rene','Martínez'), ('Camila','Martínez'),
+('Pedro','Martínez'), ('Andres','Martínez'), ('Tatiana','Martínez'), ('Jorge','Martínez'), ('Jorge','Martínez'),
+('Pedro','Martínez'), ('Sofia','Martínez'), ('Jorge','Martínez'), ('Rene','Martínez'), ('Rene','Martínez');
+
+use Tienda;
 insert into vendedor(nombre_vendedor,apellido_vendedor,direccion_vendedor,salario) values 
 ('Jorge','Moreno','Calle 26 # 26',1000000), ('Tatiana','Torres','Calle 04 # 81',1200000), ('Camila','Medina','Calle 25 # 54',1200000),
 ('Hugo','Muñoz','Calle 97 # 11',1400000), ('Mateo','Ortega','Calle 07 # 71',1400000), ('María','Gallego','Calle 45 # 45',1600000),
