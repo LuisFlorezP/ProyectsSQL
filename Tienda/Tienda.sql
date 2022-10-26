@@ -119,6 +119,14 @@ insert into articulo(nombre_articulo,precio_articulo,vendedor_id) values
 ('Spaguetti',155000,17), ('Panela',210000,18), ('Salchichas',1050000,19),('Arroz',15000,20);
 
 use Tienda;
+insert into articulo(nombre_articulo,precio_articulo,vendedor_id) values 
+('Galletas',45500,4), ('Peras',15100,2), ('Quipitos',20200,16), ('Quesito',66000,20),
+('Aceite',321000,11), ('Bananos',15200,6), ('Takis',20400,3), ('Chocolate',444000,8), 
+('Arina',566200,4), ('Coca-cola',15300,4), ('Acondicionador',55500,11), ('Panelada',110600,12), 
+('Pollo',1111000,12), ('Maggi',15400,12), ('Peinilla',760000,15), ('Frutiño',250000,16), 
+('Manzana',985300,12), ('Aguacate',15500,18), ('Pan',70000,19),('Salsa roja',450000,19);
+
+use Tienda;
 insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values 
 ('Calle 26 # 26','2017/02/22','18:10',2,30000,5700,35700,1,1,20,13), ('Calle 12 # 21','2018/09/18','14:00',1,280000,53200,333200,6,6,15,3),
 ('Calle 66 # 06','2021/03/10','12:20',6,6000000,1140000,7140000,11,4,10,16), ('Calle 45 # 45','2022/11/14','14:22',4,400000,76000,476000,16,2,5,6),
