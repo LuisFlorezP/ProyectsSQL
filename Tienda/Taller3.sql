@@ -48,35 +48,32 @@ select comprador_id,max(bruto) 'MÁXIMO VALOR BRUTO DE CADA COMPRADOR' from fact
 use Tienda;
 select num_vendedor,min(bruto) 'MÍNIMO VALOR BRUTO DE CADA VENDEDOR' from factura group by num_vendedor order by num_vendedor;
 
-/* 
-*/
+-- Agrupar los vendedores para sumar el valor bruto que le corresponde a cada vendedor si dicha sumatoria es mayor a trescientos mil de la tabla factura
 use Tienda;
-select
+select num_vendedor,sum(bruto) 'SUMATORIA DEL VALOR BRUTO POR CADA VENDEDOR' from factura group by num_vendedor having sum(bruto)>3000000 order by num_vendedor;
 
-/* 
-*/
+-- Agrupar los compradores para sumar el valor bruto que le corresponde a cada comprador si dicha sumatoria es menor a quinientos mil de la tabla factura
 use Tienda;
-select
+select comprador_id,sum(bruto) 'SUMATORIA DEL VALOR BRUTO POR CADA COMPRADOR' from factura group by comprador_id having sum(bruto)<5000000 order by comprador_id;
 
-/* 
-*/
+/* Agrupar los vendedores para contar la cantidad de artículos que le corresponde a cada vendedor si el promedio del precio del artículo es mayor o igual a 220000 de la 
+tabla artículo */
 use Tienda;
-select
+select vendedor_id,count(nombre_articulo) 'CANTIDAD DE ARTÍCULOS PARA CADA VENDEDOR' from articulo group by vendedor_id having avg(precio_articulo)>=220000 order by vendedor_id;
 
-/* 
-*/
+/* Agrupar los vendedores para hacer el promedio del precio de los artículos que le corresponde a cada vendedor si el promedio del precio del artículo es mayor a 500000 de la 
+tabla artículo */
 use Tienda;
-select
+select vendedor_id,avg(precio_articulo) 'PROMEDIO DEL PRECIO DE ARTÍCULOS POR VENDEDOR' from articulo group by vendedor_id having avg(precio_articulo)>500000 order by vendedor_id;
 
-/* 
-*/
+/* Agrupar los tipos de envíos para saber el máximo de la cantidad de los artículos que le corresponde a cada tipo de envío si el máximo de la cantidad de los artículos 
+es mayor a 4 de la tabla factura */
 use Tienda;
-select
+select envio_id,max(cantidad) 'MÁXIMO DE CANTIDAD DE CADA TIPO DE ENVÍO' from factura group by envio_id having max(cantidad)>4 order by envio_id;
 
-/* 
-*/
+-- Agrupar los tipos de envíos para saber el mínimo del iva que le corresponde a cada tipo de envío si el mínimo del iva es menor o igual a 50000 de la tabla factura 
 use Tienda;
-select
+select envio_id,min(iva) 'MÍNIMO DE IVA DE CADA TIPO DE ENVÍO' from factura group by envio_id having min(iva)<=50000 order by envio_id;
 
 -- Ordenar de forma ascendente los nombres de artículos, mostrando solamente aquellos nombres que empiecen con la letra "A" de la tabla artículo
 use Tienda;
