@@ -1,6 +1,6 @@
-CREATE DATABASE Taller1;
+CREATE DATABASE Tienda;
 
-use Taller1;
+use Tienda;
 create table comprador (
 id_comprador int primary key identity (1,1),
 nombre_comprador varchar (40),
@@ -8,19 +8,19 @@ apellido_comprador varchar (40),
 direccion_comprador varchar (40),
 tel_comprador int)
 
-use Taller1;
+use Tienda;
 create table envio (
 id_envio int primary key identity (1,1),
 tipo_envio varchar (20))
 
-use Taller1;
+use Tienda;
 create table vendedor (
 id_vendedor int primary key identity (1,1),
 nombre_vendedor varchar (40),
 apellido_vendedor varchar (40),
 direccion_vendedor varchar (40))
 
-use Taller1;
+use Tienda;
 create table articulo (
 id_articulo int primary key identity (1,1),
 nombre_articulo varchar (40),
@@ -28,7 +28,7 @@ precio_articulo int,
 vendedor_id int,
 constraint vendedor_id foreign key (vendedor_id) references vendedor(id_vendedor))
 
-use Taller1;
+use Tienda;
 create table factura (
 id_pago int primary key identity (1,1),
 direccion_envio varchar (40),
@@ -48,27 +48,27 @@ constraint num_vendedor foreign key (num_vendedor) references vendedor(id_vended
 constraint articulo_id foreign key (articulo_id) references articulo(id_articulo))
 
 
-    use Taller1;
+    use Tienda;
     select * from comprador;
 
-    use Taller1;
+    use Tienda;
     select * from envio;
 
-    use Taller1;
+    use Tienda;
     select * from vendedor;
 
-    use Taller1;
+    use Tienda;
     select * from articulo;
 
-    use Taller1;
+    use Tienda;
     select * from factura;
 
 
-use Taller1;
+use Tienda;
 alter table vendedor
 add salario money;
 
-use Taller1;
+use Tienda;
 alter table factura
 alter column iva money;
 
