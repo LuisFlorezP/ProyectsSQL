@@ -270,3 +270,15 @@ select id_articulo 'Num Artículo',id_vendedor 'Num vendedor', COUNT(articulo.ve
 
 -- Relación de las tablas vendedor y factura para ver el agrupamiento de las facturas junto a los vendedores y su dirección pero de vendedor 3
 select COUNT(id_pago) 'Cantidad de facturas',id_vendedor,direccion_vendedor from vendedor inner join factura on vendedor.id_vendedor=factura.num_vendedor group by id_vendedor,direccion_vendedor having id_vendedor=3
+
+
+-- Guardar procedimiento: Ventas de artículo
+alter procedure SP_venArt AS print 'Ventas de artículo'
+select COUNT(id_articulo) 'Cantidad de ventas del artículo',articulo_id,nombre_articulo from articulo inner join factura on articulo.id_articulo=factura.articulo_id group by articulo_id,nombre_articulo having nombre_articulo='Leche';
+
+-- Alterar procedimiento: Ventas de artículo
+alter procedure SP_venArt AS print 'Ventas de artículo'
+select COUNT(id_articulo) 'Cantidad de ventas del artículo',articulo_id,nombre_articulo from articulo inner join factura on articulo.id_articulo=factura.articulo_id group by articulo_id,nombre_articulo having nombre_articulo='Leche' or nombre_articulo='Arroz' or nombre_articulo='Panela';
+
+-- Mostrar: Ventas de artículo
+execute SP_venArt;
