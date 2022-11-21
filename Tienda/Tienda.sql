@@ -48,45 +48,30 @@ constraint num_vendedor foreign key (num_vendedor) references vendedor(id_vended
 constraint articulo_id foreign key (articulo_id) references articulo(id_articulo))
 
 
-	use Tienda;
 	select * from comprador;
 
-	use Tienda;
 	select * from envio;
 
-	use Tienda;
 	select * from vendedor;
 
-	use Tienda;
 	select * from articulo;
 
-	use Tienda;
 	select * from factura;
 
 
-use Tienda;
-alter table vendedor
-add salario money;
+alter table vendedor add salario money;
 
-use Tienda;
-alter table envio
-alter column tipo_envio varchar (40);
+alter table envio alter column tipo_envio varchar (40);
 
-use Tienda;
-alter table comprador
-drop column tel_comprador;
+alter table comprador drop column tel_comprador;
 
-use Tienda;
 exec sp_rename 'facturacion' , 'factura';
 
-use Tienda;​​
 EXEC sp_rename 'dbo.articulo', 'id_articulo', 'articulo';
 
-use Tienda;
 delete from comprador where id_comprador=6;
 
 
-use Tienda;
 insert into comprador(nombre_comprador,apellido_comprador,direccion_comprador,tel_comprador) values 
 ('Jorge','Martínez','Calle 66 # 9',5049461), ('Tatiana','Montoya','Calle 4 # 44',5040010), ('Camila','Palacio','Calle 44 # 4',5041111),
 ('Sara','Fernandez','Calle 13 # 1',5041133), ('Paola','Echeverri','Calle 51 # 4',5047890), ('Daniel','Bedoya','Calle 11 # 11',5044050),
@@ -96,14 +81,12 @@ insert into comprador(nombre_comprador,apellido_comprador,direccion_comprador,te
 ('Laura','Fernandez','Calle 22 # 9',5043060), ('Simón','Echeverri','Calle 69 # 7',5043014), ('Raul','Bedoya','Calle 16 # 7',5040287),
 ('Luis','Florez','Calle 11 # 7',5216500), ('Riguberto','Herrera','Calle 2 # 91',5047142);
 
-use Tienda;
 insert into comprador(nombre_comprador,apellido_comprador) values 
 ('Andres','Martínez'), ('Jorge','Martínez'), ('Sofia','Martínez'), ('Tatiana','Martínez'), ('Pedro','Martínez'), 
 ('Jorge','Martínez'), ('Jorge','Martínez'), ('Jorge','Martínez'), ('Rene','Martínez'), ('Camila','Martínez'),
 ('Pedro','Martínez'), ('Andres','Martínez'), ('Tatiana','Martínez'), ('Jorge','Martínez'), ('Jorge','Martínez'),
 ('Pedro','Martínez'), ('Sofia','Martínez'), ('Jorge','Martínez'), ('Rene','Martínez'), ('Rene','Martínez');
 
-use Tienda;
 insert into vendedor(nombre_vendedor,apellido_vendedor,direccion_vendedor,salario) values 
 ('Jorge','Moreno','Calle 26 # 26',1000000), ('Tatiana','Torres','Calle 04 # 81',1200000), ('Camila','Medina','Calle 25 # 54',1200000),
 ('Hugo','Muñoz','Calle 97 # 11',1400000), ('Mateo','Ortega','Calle 07 # 71',1400000), ('María','Gallego','Calle 45 # 45',1600000),
@@ -113,11 +96,9 @@ insert into vendedor(nombre_vendedor,apellido_vendedor,direccion_vendedor,salari
 ('Lucas','Muñoz','Calle 12 # 21',2200000), ('Paula','Ortega','Calle 41 # 14',2400000), ('Carmen','Gallego','Calle 10 # 05',2400000),
 ('Maria','Palacio','Calle 01 # 02',3000000), ('Andrea','Rodríguez','Calle 97 # 79',1000000);
 
-use Tienda;
 insert into envio(tipo_envio) values ('Envíos urgentes'), ('Envíos estándar'), ('Envíos contra reembolso'), 
 ('Envíos frágiles'), ('Envíos internacionales'), ('Envío a un punto de entrega'), ('Envíos pesados');
 
-use Tienda;
 insert into articulo(nombre_articulo,precio_articulo,vendedor_id) values 
 ('Lentejas',30000,1), ('Papel',45000,2), ('Carne',520000,3), ('Leche',660000,4),
 ('Vino',280000,5), ('Gomitas',1250000,6), ('Jabon de manos',1450000,7), ('Jabon de baño',760000,8), 
@@ -125,7 +106,6 @@ insert into articulo(nombre_articulo,precio_articulo,vendedor_id) values
 ('Talco',990000,13), ('Jugo',222000,14), ('Gaseosa',100000,15), ('Atún',440000,16), 
 ('Spaguetti',155000,17), ('Panela',210000,18), ('Salchichas',1050000,19),('Arroz',15000,20);
 
-use Tienda;
 insert into articulo(nombre_articulo,precio_articulo,vendedor_id) values 
 ('Galletas',45500,4), ('Peras',15100,2), ('Quipitos',20200,16), ('Quesito',66000,20),
 ('Aceite',321000,11), ('Bananos',15200,6), ('Takis',20400,3), ('Chocolate',444000,8), 
@@ -133,7 +113,6 @@ insert into articulo(nombre_articulo,precio_articulo,vendedor_id) values
 ('Pollo',1111000,12), ('Maggi',15400,12), ('Peinilla',760000,15), ('Frutiño',250000,16), 
 ('Manzana',985300,12), ('Aguacate',15500,18), ('Pan',70000,19),('Salsa roja',450000,19);
 
-use Tienda;
 insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values 
 ('Calle 26 # 26','2017/02/22','18:10',2,30000,5700,35700,1,1,20,13), ('Calle 12 # 21','2018/09/18','14:00',1,280000,53200,333200,6,6,15,3),
 ('Calle 66 # 06','2021/03/10','12:20',6,6000000,1140000,7140000,11,4,10,16), ('Calle 45 # 45','2022/11/14','14:22',4,400000,76000,476000,16,2,5,6),
@@ -146,13 +125,11 @@ insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador
 ('Calle 21 # 03','2018/01/02','18:40',7,5810000,1103900,6913900,10,3,11,1), ('Calle 25 # 54','2021/12/11','08:10',5,1110000,210900,1320900,15,1,6,18),
 ('Calle 10 # 05','2022/03/26','11:55',6,6300000,1197000,7497000,20,6,1,8), ('Calle 04 # 81','2017/04/23','09:45',5,7250000,1377500,8627500,8,1,13,2);
 
-use Tienda;
 insert into factura(cantidad,bruto,comprador_id,num_vendedor) values 
 (1,45000,12,4), (4,2640000,13,3), (4,2640000,15,4), (2,440000,12,5), (3,90000,2,4),
 (4,2640000,15,3), (1,45000,9,8), (2,440000,15,3), (1,45000,13,4), (3,90000,9,11);
 
 
-use Tienda;
 select sum(precio_articulo) 'SUMA PRECIOS ARTÍCULOS' from articulo;
 select count(envio_id) 'ENVÍOS URGENTES' from factura where envio_id=1;
 select sum(neto) 'ENVÍOS PESADOS' from factura where envio_id=7;
@@ -163,93 +140,72 @@ select avg(bruto) 'PROMEDIO DEL VALOR BRUTO' from factura;
 select count(nombre_comprador) 'CANTIDAD DE FERNANDOS' from comprador where nombre_comprador='Fernando';
 select count(nombre_vendedor) 'CANTIDAD DE ANDREAS' from vendedor where nombre_vendedor='Andrea';
 
-use Tienda
 select salario from vendedor where salario between '1000000' and '1400000';
 
 
 -- Ordenar de forma ascendente los apellidos, mostrando solamente aquellos registros que el nombre comience con la letra "L" de la tabla comprador
-use Tienda;
 select * from comprador where nombre_comprador like 'L%' order by apellido_comprador ASC;
 
 -- Ordenar de forma descendente los apellidos, mostrando solamente aquellos registros que el nombre comience con la letra "M" de la tabla vendedor
-use Tienda;
 select * from vendedor where nombre_vendedor like 'M%' order by apellido_vendedor DESC;
 
 /* Ordenar de forma ascendente el precio de los artículos, mostrando solamente aquellos registros que el nombre del artículo contenga la letra "i" y que el precio esté entre un millón y
 un millón trescientos de la tabla artículo */
-use Tienda;
 select * from articulo where nombre_articulo like '%i%' and precio_articulo between '1000000' and '1300000' order by precio_articulo;
 
 -- Ordenar de forma descendente el valor neto, mostrando solamente aquellos registros que el número de vendedor sea 1 o 3 o 5 de la tabla factura
-use Tienda;
 select * from factura where num_vendedor=1 or num_vendedor=3 or num_vendedor=5 order by neto DESC;
 
 -- Ordenar de forma ascendente el valor neto, mostrando solamente aquellos registros que el valor bruto que sea mayor igual a cien mil y menor a quinientos mil de la tabla factura
-use Tienda;
 select * from factura where bruto>=100000 and bruto<520000 order by neto ASC;
 
 /* Ordenar de forma descendente el nombre de artículo, mostrando solamente aquellos registros que el nombre termine con la letra "o" y que el precio sea mayor o igual a
 quinientos mil de la tabla artículo */
-use Tienda;
 select * from articulo where nombre_articulo like '%o' and precio_articulo>=500000 order by nombre_articulo DESC;
 
 -- Agrupar los tipos de envío para saber cuantos valores bruto tienen el tipo de envío correspondiente de la tabla factura
-use Tienda;
 select envio_id,count(bruto) 'TIPOS DE ENVÍOS POR VALOR BRUTO' from factura group by envio_id order by envio_id ASC;
 
 -- Agrupar los salarios repetidos para saber cuantos nombres tienen el salario correspondiente de la tabla vendedor
-use Tienda;
 select salario,count(nombre_vendedor) 'CANTIDAD DE SALARIOS REPETIDOS' from vendedor group by salario order by salario DESC;
 
 -- Agrupar los vendedores para sumar el precio de artículos que le corresponde a cada vendedor de la tabla artículo
-use Tienda;
 select vendedor_id,sum(precio_articulo) 'SUMATORIA DEL PRECIO DEL ARTÍCULO PARA CADA VENDEDOR' from articulo group by vendedor_id order by vendedor_id;
 
 -- Agrupar los nombres de compradores para contar la cantidad de apellidos que le corresponde a cada comprador de la tabla comprador
-use Tienda;
 select nombre_comprador,count(apellido_comprador) 'CANTIDAD DE APELLIDOS DE COMPRADORES PARA CADA NOMBRE' from comprador group by nombre_comprador order by nombre_comprador;
 
 -- Agrupar los compradores para saber el máximo valor bruto que le corresponde a cada comprador de la tabla factura
-use Tienda;
 select comprador_id,max(bruto) 'MÁXIMO VALOR BRUTO DE CADA COMPRADOR' from factura group by comprador_id order by comprador_id;
 
 -- Agrupar los vendedores para saber el mínimo valor bruto que le corresponde a cada vendedor de la tabla factura 
-use Tienda;
 select num_vendedor,min(bruto) 'MÍNIMO VALOR BRUTO DE CADA VENDEDOR' from factura group by num_vendedor order by num_vendedor;
 
 -- Agrupar los vendedores para sumar el valor bruto que le corresponde a cada vendedor si dicha sumatoria es mayor a trescientos mil de la tabla factura
-use Tienda;
 select num_vendedor,sum(bruto) 'SUMATORIA DEL VALOR BRUTO POR CADA VENDEDOR' from factura group by num_vendedor having sum(bruto)>3000000 order by num_vendedor;
 
 -- Agrupar los compradores para sumar el valor bruto que le corresponde a cada comprador si dicha sumatoria es menor a quinientos mil de la tabla factura
-use Tienda;
 select comprador_id,sum(bruto) 'SUMATORIA DEL VALOR BRUTO POR CADA COMPRADOR' from factura group by comprador_id having sum(bruto)<5000000 order by comprador_id;
 
 /* Agrupar los vendedores para contar la cantidad de artículos que le corresponde a cada vendedor si el promedio del precio del artículo es mayor o igual a 220000 de la 
 tabla artículo */
-use Tienda;
 select vendedor_id,count(nombre_articulo) 'CANTIDAD DE ARTÍCULOS PARA CADA VENDEDOR' from articulo group by vendedor_id having avg(precio_articulo)>=220000 order by vendedor_id;
 
 /* Agrupar los vendedores para hacer el promedio del precio de los artículos que le corresponde a cada vendedor si el promedio del precio del artículo es mayor a 500000 de la 
 tabla artículo */
-use Tienda;
 select vendedor_id,avg(precio_articulo) 'PROMEDIO DEL PRECIO DE ARTÍCULOS POR VENDEDOR' from articulo group by vendedor_id having avg(precio_articulo)>500000 order by vendedor_id;
 
 /* Agrupar los tipos de envíos para saber el máximo de la cantidad de los artículos que le corresponde a cada tipo de envío si el máximo de la cantidad de los artículos 
 es mayor a 4 de la tabla factura */
-use Tienda;
 select envio_id,max(cantidad) 'MÁXIMO DE CANTIDAD DE CADA TIPO DE ENVÍO' from factura group by envio_id having max(cantidad)>4 order by envio_id;
 
 -- Agrupar los tipos de envíos para saber el mínimo del iva que le corresponde a cada tipo de envío si el mínimo del iva es menor o igual a 50000 de la tabla factura 
-use Tienda;
 select envio_id,min(iva) 'MÍNIMO DE IVA DE CADA TIPO DE ENVÍO' from factura group by envio_id having min(iva)<=50000 order by envio_id;
 
 -- Ordenar de forma ascendente los nombres de artículos, mostrando solamente aquellos nombres que empiecen con la letra "A" de la tabla artículo
-use Tienda;
 select * from articulo where nombre_articulo like 'A%' order by nombre_articulo;
 
 -- Ordenar de forma descendente los apellidos de los compradores, mostrando solamente aquellos aepllidos que terminen con la letra "i" de la tabla comprador
-use Tienda;
 select * from comprador where apellido_comprador like '%i' order by apellido_comprador DESC;
 
 

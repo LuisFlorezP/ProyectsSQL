@@ -48,35 +48,23 @@ constraint num_vendedor foreign key (num_vendedor) references vendedor(id_vended
 constraint articulo_id foreign key (articulo_id) references articulo(id_articulo))
 
 
-    use Tienda;
     select * from comprador;
 
-    use Tienda;
     select * from envio;
 
-    use Tienda;
     select * from vendedor;
 
-    use Tienda;
     select * from articulo;
 
-    use Tienda;
     select * from factura;
 
 
-use Tienda;
-alter table vendedor
-add salario money;
+alter table vendedor add salario money;
 
-use Tienda;
-alter table factura
-alter column iva money;
+alter table factura alter column iva money;
 
-use Tienda;
-alter table vendedor
-drop column tel_vendedor;
+alter table vendedor drop column tel_vendedor;
 
-use Tienda;
 insert into comprador(nombre_comprador,apellido_comprador,direccion_comprador,tel_comprador) values 
 ('Jorge','Martínez','Calle 66 # 9',5049461), ('Tatiana','Montoya','Calle 4 # 44',5040010), ('Camila','Palacio','Calle 44 # 4',5041111),
 ('Sara','Fernandez','Calle 13 # 1',5041133), ('Paola','Echeverri','Calle 51 # 4',5047890), ('Daniel','Bedoya','Calle 11 # 11',5044050),
@@ -86,14 +74,12 @@ insert into comprador(nombre_comprador,apellido_comprador,direccion_comprador,te
 ('Laura','Fernandez','Calle 22 # 9',5043060), ('Simón','Echeverri','Calle 69 # 7',5043014), ('Raul','Bedoya','Calle 16 # 7',5040287),
 ('Luis','Florez','Calle 11 # 7',5216500), ('Riguberto','Herrera','Calle 2 # 91',5047142);
 
-use Tienda;
 insert into comprador(nombre_comprador,apellido_comprador) values 
 ('Andres','Martínez'), ('Jorge','Martínez'), ('Sofia','Martínez'), ('Tatiana','Martínez'), ('Pedro','Martínez'), 
 ('Jorge','Martínez'), ('Jorge','Martínez'), ('Jorge','Martínez'), ('Rene','Martínez'), ('Camila','Martínez'),
 ('Pedro','Martínez'), ('Andres','Martínez'), ('Tatiana','Martínez'), ('Jorge','Martínez'), ('Jorge','Martínez'),
 ('Pedro','Martínez'), ('Sofia','Martínez'), ('Jorge','Martínez'), ('Rene','Martínez'), ('Rene','Martínez');
 
-use Tienda;
 insert into vendedor(nombre_vendedor,apellido_vendedor,direccion_vendedor,salario) values 
 ('Jorge','Moreno','Calle 26 # 26',1000000), ('Tatiana','Torres','Calle 04 # 81',1200000), ('Camila','Medina','Calle 25 # 54',1200000),
 ('Hugo','Muñoz','Calle 97 # 11',1400000), ('Mateo','Ortega','Calle 07 # 71',1400000), ('María','Gallego','Calle 45 # 45',1600000),
@@ -103,11 +89,9 @@ insert into vendedor(nombre_vendedor,apellido_vendedor,direccion_vendedor,salari
 ('Lucas','Muñoz','Calle 12 # 21',2200000), ('Paula','Ortega','Calle 41 # 14',2400000), ('Carmen','Gallego','Calle 10 # 05',2400000),
 ('Maria','Palacio','Calle 01 # 02',3000000), ('Andrea','Rodríguez','Calle 97 # 79',1000000);
 
-use Tienda;
 insert into envio(tipo_envio) values ('Envíos urgentes'), ('Envíos estándar'), ('Envíos contra reembolso'), 
 ('Envíos frágiles'), ('Envíos internacionales'), ('Envío a un punto de entrega'), ('Envíos pesados');
 
-use Tienda;
 insert into articulo(nombre_articulo,precio_articulo,vendedor_id) values 
 ('Lentejas',30000,1), ('Papel',45000,2), ('Carne',520000,3), ('Leche',660000,4),
 ('Vino',280000,5), ('Gomitas',1250000,6), ('Jabon de manos',1450000,7), ('Jabon de baño',760000,8), 
@@ -115,7 +99,6 @@ insert into articulo(nombre_articulo,precio_articulo,vendedor_id) values
 ('Talco',990000,13), ('Jugo',222000,14), ('Gaseosa',100000,15), ('Atún',440000,16), 
 ('Spaguetti',155000,17), ('Panela',210000,18), ('Salchichas',1050000,19),('Arroz',15000,20);
 
-use Tienda;
 insert into articulo(nombre_articulo,precio_articulo,vendedor_id) values 
 ('Galletas',45500,4), ('Peras',15100,2), ('Quipitos',20200,16), ('Quesito',66000,20),
 ('Aceite',321000,11), ('Bananos',15200,6), ('Takis',20400,3), ('Chocolate',444000,8), 
@@ -123,7 +106,6 @@ insert into articulo(nombre_articulo,precio_articulo,vendedor_id) values
 ('Pollo',1111000,12), ('Maggi',15400,12), ('Peinilla',760000,15), ('Frutiño',250000,16), 
 ('Manzana',985300,12), ('Aguacate',15500,18), ('Pan',70000,19),('Salsa roja',450000,19);
 
-use Tienda;
 insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador_id,envio_id,num_vendedor,articulo_id) values 
 ('Calle 26 # 26','2017/02/22','18:10',2,30000,5700,35700,1,1,20,13), ('Calle 12 # 21','2018/09/18','14:00',1,280000,53200,333200,6,6,15,3),
 ('Calle 66 # 06','2021/03/10','12:20',6,6000000,1140000,7140000,11,4,10,16), ('Calle 45 # 45','2022/11/14','14:22',4,400000,76000,476000,16,2,5,6),
@@ -136,7 +118,6 @@ insert into factura(direccion_envio,fecha,hora,cantidad,bruto,iva,neto,comprador
 ('Calle 21 # 03','2018/01/02','18:40',7,5810000,1103900,6913900,10,3,11,1), ('Calle 25 # 54','2021/12/11','08:10',5,1110000,210900,1320900,15,1,6,18),
 ('Calle 10 # 05','2022/03/26','11:55',6,6300000,1197000,7497000,20,6,1,8), ('Calle 04 # 81','2017/04/23','09:45',5,7250000,1377500,8627500,8,1,13,2);
 
-use Tienda;
 insert into factura(cantidad,bruto,comprador_id,num_vendedor) values 
 (1,45000,12,4), (4,2640000,13,3), (4,2640000,15,4), (2,440000,12,5), (3,90000,2,4),
 (4,2640000,15,3), (1,45000,9,8), (2,440000,15,3), (1,45000,13,4), (3,90000,9,11);
